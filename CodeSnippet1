@@ -1,0 +1,63 @@
+//
+//  ViewController.swift
+//  ImageViewExample
+//
+//  Created by The Viking Coder on 2020-02-07.
+//  
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    // @TODO: 0. Ensure that you add all your images in Assets.xcassets!
+    // balbasaur is there!
+    
+    // ----------------------------
+    // MARK: OUTLETS:
+    // ----------------------------
+    // @TODO: 1. make an outlet for the empty UIImageView
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("HELLO WORLD!")
+        
+        //@TODO: 2. When app loads, set the default image to JIGGLYPUFF  DONE
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // ---------------------------- -
+    // MARK: ACTIONS
+    // ---------------------------- -
+    // @TODO: 3. When person presses button, change picture to PIKACHU
+    
+    @IBOutlet weak var TOPIMAGE: UIImageView!
+    
+   
+    @IBAction func swipeToPIKA(_ sender: UISwipeGestureRecognizer) {
+        print("Swipe to pika")
+        TOPIMAGE.image=UIImage(named:"pikachu")    }
+    
+    
+    @IBAction func tapOnPica(_ sender: UITapGestureRecognizer) {
+        TOPIMAGE.image=UIImage(named:"pikachu")
+        print("tap to chg to pika")    }
+    
+    @IBAction func BTNSHOWPICKCHU(_ sender: UIButton) {
+        print("in swipe to chg to pika button")
+        TOPIMAGE.image=UIImage(named: "pikachu")}
+    
+    let pokedex = ["bulbasaur", "eevee", "jigglypuff", "pikachu","psyduck"]
+    @IBAction func BTNRNDGENERATOR(_ sender: UIButton) {
+        let randomInt = Int.random(in: 1..<pokedex.count)
+        TOPIMAGE.image=UIImage(named: pokedex[randomInt])
+    }
+    
+    // @TODO: 4. When person presses button, show a random image in the UIImageView
+
+
+}
+
